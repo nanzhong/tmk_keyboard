@@ -2,44 +2,44 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Keymap 0: Default Layer
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |   ~    |   1  |   2  |   3  |   4  |   5  |   [  |           |   ]  |   6  |   7  |   8  |   9  |   0  |   \    |
+     * |  Esc   |   1  |   2  |   3  |   4  |   5  | SLEP |           | WAKE |   6  |   7  |   8  |   9  |   0  |   \    |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * | Tab    |   '  |   ,  |   .  |   P  |   Y  | ~Fn1 |           | ~Fn3 |   F  |   G  |   C  |   R  |   L  |   /    |
+     * | Tab    |   '  |   ,  |   .  |   P  |   Y  |  Eql |           |   [  |   F  |   G  |   C  |   R  |   L  |   /    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * | LCtrl  |   A  |   O  |   E  |   U  |   I  |------|           |------|   D  |   H  |   T  |   N  |   S  |   -    |
-     * |--------+------+------+------+------+------|  Fn0 |           | ~Fn4 |------+------+------+------+------+--------|
+     * | LCtl   |   A  |   O  |   E  |   U  |   I  |------|           |------|   D  |   H  |   T  |   N  |   S  |   -    |
+     * |--------+------+------+------+------+------|  Grv |           |   ]  |------+------+------+------+------+--------|
      * | LShift |   ;  |   Q  |   J  |   K  |   X  |      |           |      |   B  |   M  |   W  |   V  |   Z  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | ~Fn1 | ~Fn2 | Caps | LGui | LAlt |                                       |  Lft |  Up  |  Dn  | Rght | ~Fn4 |
+     *   | MUTE | VOLD | VOLU | LGui | LAlt |                                       |  Lft |  Up  |  Dn  | Rght | Caps |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        | +Fn2 |  =   |       |  [   |  ]   |
+     *                                        |  Fn0 | Ins  |       |  Fn3 | Fn2  |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      | Home |       | PgUp |      |      |
-     *                                 | BkSp |  Del |------|       |------| Enter| Space|
+     *                                 |Space | Del  |------|       |------|Enter | Bkspc|
      *                                 |      |      | End  |       | PgDn |      |      |
      *                                 `--------------------'       `--------------------'
      */
 
     KEYMAP(  // layout: layer 0: default
         // left hand
-        GRV, 1,   2,   3,   4,   5,   BSLS,
-        TAB, Q,   W,   E,   R,   T,   FN1,
-        LSFT,A,   S,   D,   F,   G,
-        LCTL,Z,   X,   C,   V,   B,   FN0,
-        FN1, FN6, CAPS,LALT,LGUI,
-                                      FN2, HOME,
-                                           END,
-                                 BSPC,ESC, SPC,
+        ESC,  1,    2,    3,    4,   5,   SLEP,
+        TAB,  QUOT, COMM, DOT,  P,   Y,   EQL,
+        CAPS, A,    O,    E,    U,   I,
+        LSFT, SCLN, Q,    J,    K,   X,   GRV,
+        MUTE, VOLD, VOLU, LGUI, LALT,
+                                      FN0, INS,
+                                           HOME,
+                                  SPC,DEL, END,
         // right hand
-             QUOT,6,   7,   8,   9,   0,   EQL,
-             FN3, Y,   U,   I,   O,   P,   LBRC,
-                  H,   J,   K,   L,   SCLN,RSFT,
-             FN4, N,   M,   COMM,DOT, SLSH,RCTL,
-                       LEFT,UP,  DOWN,RGHT,FN4,
-        PGUP,DEL,
-        PGDN,
-        INS, ENT, SPC
+             WAKE, 6,   7,   8,   9,   0,   BSLS,
+             LBRC, F,   G,   C,   R,   L,   SLSH,
+                   D,   H,   T,   N,   S,   MINS,
+             RBRC, B,   M,   W,   V,   Z,   RSFT,
+                       LEFT,UP,  DOWN,RGHT,LCTL,
+        FN3,  FN2,
+        PGUP,
+        PGDN, ENT, BSPC
     ),
 
     KEYMAP(  // layout: layer 1: F-keys instead of numbers
@@ -48,16 +48,16 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,LALT,LGUI,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
                                  TRNS,TRNS,TRNS,
         // right hand
-             F7,  F8,  F9,  F10, F11, F12, MINS,
+             F7,  F8,  F9,  F10, F11, F12, TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,RBRC,
                   TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       RGUI,RALT,TRNS,TRNS,TRNS,
+                       TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
@@ -86,25 +86,26 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // layout: layer 3: F-keys only
         // left hand
-        TRNS,NO,  NO,  NO,  NO,  NO,  NO,  
-        TRNS,F13, F14, F15, F16, NO,  TRNS,
-        TRNS,F17, F18, F19, F20, NO,  
-        TRNS,F21, F22, F23, F24, NO,  TRNS,
-        TRNS,TRNS,TRNS,LALT,LGUI,
+        TRNS,NO,  NO,  NO,  NO,  NO,  TRNS,
+        TRNS,F1,  F2,  F3,  F4,  NO,  TRNS,
+        TRNS,F5,  F6,  F7,  F8,  NO,
+        TRNS,F9,  F10, F11, F12, NO,  TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,
                                       TRNS,TRNS,
                                            TRNS,
-                                 LCTL,LSFT,TRNS,
+                                 TRNS,TRNS,TRNS,
         // right hand
-             NO,  NO,  NO,  NO,  NO,  NO,  TRNS,
+             TRNS,NO,  NO,  NO,  NO,  NO,  TRNS,
              TRNS,NO,  F1,  F2,  F3,  F4,  TRNS,
                   NO,  F5,  F6,  F7,  F8,  TRNS,
              TRNS,NO,  F9,  F10, F11, F12, TRNS,
-                       RGUI,RALT,TRNS,TRNS,TRNS,
+                       TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
-        TRNS,RSFT,RCTL
+        TRNS,TRNS,TRNS
     ),
 
+    /*
     KEYMAP(  // layout: layer 4: F-keys + cursor
         // left hand
         TRNS,F1,  F2,  F3,  F4,  F5,  F6,
@@ -146,13 +147,14 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,
         TRNS,TRNS,TRNS
     ),
+    */
 
 /*
     KEYMAP(  // layout: layer N: transparent on edges, all others are empty
         // left hand
-        TRNS,NO,  NO,  NO,  NO,  NO,  NO,  
+        TRNS,NO,  NO,  NO,  NO,  NO,  NO,
         TRNS,NO,  NO,  NO,  NO,  NO,  TRNS,
-        TRNS,NO,  NO,  NO,  NO,  NO,  
+        TRNS,NO,  NO,  NO,  NO,  NO,
         TRNS,NO,  NO,  NO,  NO,  NO,  TRNS,
         TRNS,TRNS,TRNS,LALT,LGUI,
                                       TRNS,TRNS,

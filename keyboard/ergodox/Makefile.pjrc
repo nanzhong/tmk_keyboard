@@ -112,4 +112,5 @@ workman: all
 cub: OPT_DEFS += -DKEYMAP_CUB
 cub: all
 
-
+nan: OPT_DEFS += -DKEYMAP_NAN
+nan: all
